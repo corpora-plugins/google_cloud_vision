@@ -1,13 +1,14 @@
 import io
-import json
+import os
 import requests
 import traceback
 from time import sleep
 from django.utils.text import slugify
 from huey.contrib.djhuey import db_task
+from PIL import Image
 from google.cloud import vision
 from google.protobuf.json_format import MessageToJson
-from corpus import *
+from corpus import Job, File
 
 
 REGISTRY = {
